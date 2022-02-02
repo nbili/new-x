@@ -1,0 +1,17 @@
+{
+  "name": "new-x",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nbili/new-x.git",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write ./"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
