@@ -1,12 +1,12 @@
 function todos(state = [], action) {
   switch (action.type) {
-    case "add_todo":
+    case "ADD_TODO":
       return state.concat([action.todo]);
 
-    case "remove_todo":
+    case "REMOVE_TODO":
       return state.filter(todo => todo.id !== action.id);
 
-    case "toggle_todo":
+    case "TOGGLE_TODO":
       return state.map(todo =>
         todo.id !== action.id
           ? todo
