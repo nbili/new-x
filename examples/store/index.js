@@ -1,4 +1,11 @@
-function createStore() {
+function todos(state = [], action) {
+  if (action.type === "add_todo") {
+    return state.concat([action.todo]);
+  }
+  return state;
+}
+
+function createStore(reducer) {
   let state;
 
   let listeners = [];
@@ -15,10 +22,40 @@ function createStore() {
     };
   }
 
+  function dispatch(action) {
+    state = reducer(state, action);
+    listeners.forEach(listener => listener());
+  }
+
   return {
     getState,
-    subscribe
+    subscribe,
+    dispatch
   };
 }
 
-createStore()
+const store = createStore(todos);
+
+const unsubscribe = store.subscribe(() => {
+  console.log(`the store is : `, store.getState());
+});
+
+store.dispatch({
+  type: "add_todo",
+  todo: {
+    id: 0,
+    name: `todo 0`,
+    complete: true
+  }
+});
+
+store.dispatch({
+  type: "add_todo",
+  todo: {
+    id: 1,
+    name: `todo 1`,
+    complete: true
+  }
+});
+
+unsubscribe();
