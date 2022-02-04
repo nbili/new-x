@@ -54,7 +54,7 @@ const unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch({
-  type: "add_todo",
+  type: "ADD_TODO",
   todo: {
     id: 0,
     name: `todo 0`,
@@ -63,7 +63,7 @@ store.dispatch({
 });
 
 store.dispatch({
-  type: "add_todo",
+  type: "ADD_TODO",
   todo: {
     id: 1,
     name: `todo 1`,
