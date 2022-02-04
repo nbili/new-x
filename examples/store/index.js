@@ -1,8 +1,21 @@
 function todos(state = [], action) {
-  if (action.type === "add_todo") {
-    return state.concat([action.todo]);
+  switch (action.type) {
+    case "add_todo":
+      return state.concat([action.todo]);
+
+    case "remove_todo":
+      return state.filter(todo => todo.id !== action.id);
+
+    case "toggle_todo":
+      return state.map(todo =>
+        todo.id !== action.id
+          ? todo
+          : Object.assign({}, todo, { complete: !todo.complete })
+      );
+
+    default:
+      return state;
   }
-  return state;
 }
 
 function createStore(reducer) {
