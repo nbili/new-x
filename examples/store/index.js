@@ -18,6 +18,23 @@ function todos(state = [], action) {
   }
 }
 
+function goals(state = [], action) {
+  switch (action.type) {
+    case "ADD_GOAL":
+      return state.concat([action.todo]);
+
+    default:
+      return state;
+  }
+}
+
+function app(state = {}, action) {
+  return {
+    todos: todos(state.todos, action),
+    goals: goals(state.goals, action)
+  };
+}
+
 function createStore(reducer) {
   let state;
 
@@ -47,7 +64,7 @@ function createStore(reducer) {
   };
 }
 
-const store = createStore(todos);
+const store = createStore(app);
 
 const unsubscribe = store.subscribe(() => {
   console.log(`the store is : `, store.getState());
