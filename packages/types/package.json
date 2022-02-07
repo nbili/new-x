@@ -1,0 +1,12 @@
+{
+  "name": "@newx/types",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}
