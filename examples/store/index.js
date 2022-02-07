@@ -1,40 +1,3 @@
-function todos(state = [], action) {
-  switch (action.type) {
-    case "ADD_TODO":
-      return state.concat([action.todo]);
-
-    case "REMOVE_TODO":
-      return state.filter(todo => todo.id !== action.id);
-
-    case "TOGGLE_TODO":
-      return state.map(todo =>
-        todo.id !== action.id
-          ? todo
-          : Object.assign({}, todo, { complete: !todo.complete })
-      );
-
-    default:
-      return state;
-  }
-}
-
-function goals(state = [], action) {
-  switch (action.type) {
-    case "ADD_GOAL":
-      return state.concat([action.todo]);
-
-    default:
-      return state;
-  }
-}
-
-function app(state = {}, action) {
-  return {
-    todos: todos(state.todos, action),
-    goals: goals(state.goals, action)
-  };
-}
-
 function createStore(reducer) {
   let state;
 
@@ -64,6 +27,49 @@ function createStore(reducer) {
   };
 }
 
+const ADD_TODO = "ADD_TODO";
+const REMOVE_TODO = "REMOVE_TODO";
+const TOGGLE_TODO = "TOGGLE_TODO";
+
+const ADD_GOAL = "ADD_GOAL";
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return state.concat([action.todo]);
+
+    case REMOVE_TODO:
+      return state.filter(todo => todo.id !== action.id);
+
+    case TOGGLE_TODO:
+      return state.map(todo =>
+        todo.id !== action.id
+          ? todo
+          : Object.assign({}, todo, { complete: !todo.complete })
+      );
+
+    default:
+      return state;
+  }
+}
+
+function goals(state = [], action) {
+  switch (action.type) {
+    case ADD_GOAL:
+      return state.concat([action.todo]);
+
+    default:
+      return state;
+  }
+}
+
+function app(state = {}, action) {
+  return {
+    todos: todos(state.todos, action),
+    goals: goals(state.goals, action)
+  };
+}
+
 const store = createStore(app);
 
 const unsubscribe = store.subscribe(() => {
@@ -71,7 +77,7 @@ const unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch({
-  type: "ADD_TODO",
+  type: ADD_TODO,
   todo: {
     id: 0,
     name: `todo 0`,
@@ -80,7 +86,7 @@ store.dispatch({
 });
 
 store.dispatch({
-  type: "ADD_TODO",
+  type: ADD_TODO,
   todo: {
     id: 1,
     name: `todo 1`,
