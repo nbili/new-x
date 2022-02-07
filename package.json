@@ -6,13 +6,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "clean": "rimraf dist *.tsbuildinfo",
     "format": "prettier --write ./"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2"
   },
   "engines": {
     "node": ">=14"
