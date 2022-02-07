@@ -1,15 +1,4 @@
-export type State = any;
-
-export type Action = {
-  type: any;
-  [extraProps: string]: any;
-};
-
-export type Reducer = (state: State, action: Action) => State;
-
-export type Listeners = (() => void)[];
-
-export type Listener = () => void;
+import { State, Action, Reducer, Listener, Listeners } from "@newx/types";
 
 function createStore(reducer: Reducer) {
   let state: State = undefined;
