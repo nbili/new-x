@@ -6,16 +6,21 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "build": "scripty",
     "clean": "rimraf dist *.tsbuildinfo",
     "format": "prettier --write ./"
   },
   "workspaces": [
     "packages/*"
   ],
+  "scripty": {
+    "path": "./scripts/workspace"
+  },
   "devDependencies": {
     "lerna": "^4.0.0",
     "prettier": "^2.5.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "scripty": "^2.0.0"
   },
   "engines": {
     "node": ">=14"
