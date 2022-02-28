@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { compose, createStore } from "redux";
 
 const reducer = (state = { count: 1 }) => state;
 
@@ -20,6 +20,18 @@ const monitorEnhancer = createStore => (reducer, initialState, enhancer) => {
   return createStore(monitoredReducer, initialState, enhancer);
 };
 
-const store = createStore(reducer, monitorEnhancer);
+const logEnhancer = createStore => (reducer, initialState, enhancer) => {
+  const logReducer = (state, action) => {
+    console.log("old state: ", state, action);
+    const newState = reducer(state, action);
+    console.log("new state: ", newState, action);
+
+    return newState;
+  };
+
+  return createStore(logReducer, initialState, enhancer);
+};
+
+const store = createStore(reducer, compose(monitorEnhancer, logEnhancer));
 
 store.dispatch({ type: "Test" });
