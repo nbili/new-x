@@ -38,7 +38,22 @@ const logMiddlware = store => next => action => {
   console.log(`new state: `, store.getState(), action);
 };
 
+const monitoredMiddlware = store => next => action => {
+  const start = performance.now();
+
+  next(action);
+
+  const end = performance.now();
+
+  const diff = end - start;
+
+  console.log("->", diff);
+};
+
 // const store = createStore(reducer, compose(monitorEnhancer, logEnhancer));
-const store = createStore(reducer, applyMiddleware(logMiddlware));
+const store = createStore(
+  reducer,
+  applyMiddleware(logMiddlware, monitoredMiddlware)
+);
 
 store.dispatch({ type: "Test" });
