@@ -1,4 +1,4 @@
-import { compose, createStore } from "redux";
+import { applyMiddleware, compose, createStore } from "redux";
 
 const reducer = (state = { count: 1 }) => state;
 
@@ -32,6 +32,13 @@ const logEnhancer = createStore => (reducer, initialState, enhancer) => {
   return createStore(logReducer, initialState, enhancer);
 };
 
-const store = createStore(reducer, compose(monitorEnhancer, logEnhancer));
+const logMiddlware = store => next => action => {
+  console.log(`old state: `, store.getState(), action);
+  next(action);
+  console.log(`new state: `, store.getState(), action);
+};
+
+// const store = createStore(reducer, compose(monitorEnhancer, logEnhancer));
+const store = createStore(reducer, applyMiddleware(logMiddlware));
 
 store.dispatch({ type: "Test" });
