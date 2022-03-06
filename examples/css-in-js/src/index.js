@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
+import { Quote } from "./Quote";
+
 const Title = styled.h1`
   font-size: 1.4em;
   text-align: center;
@@ -16,8 +18,12 @@ const Description = styled.p`
 function App() {
   return (
     <div>
-      <Title>css in js</Title>
-      <Description>this is a Description</Description>
+      {/* <Title>css in js</Title>
+      <Description>this is a Description</Description> */}
+
+      <Quote by="子曰" source="https://ctext.org/analects/xue-er/zhs">
+        学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？
+      </Quote>
     </div>
   );
 }
