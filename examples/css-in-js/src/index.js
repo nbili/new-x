@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import GlobalStyles from "./GlobalStyles";
 
 import { Quote } from "./Quote";
 
@@ -24,6 +25,8 @@ function App() {
       <Quote by="子曰" source="https://ctext.org/analects/xue-er/zhs">
         学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？
       </Quote>
+
+      <GlobalStyles />
     </div>
   );
 }
