@@ -4,7 +4,7 @@ import App from "./App";
 
 import { Provider } from "react-redux";
 
-import { store } from "./Count/store";
+import { store } from "./CountUseConnect/store";
 
 // import './flatState'
 // import './enhancer'
