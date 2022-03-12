@@ -1,8 +1,15 @@
-import { CountNumberContainer } from "./CountNumberContainer";
+import {
+  ComputedCountContainer,
+  CountNumberContainer
+} from "./CountNumberContainer";
 import { OperatorContainer } from "./OperatorContainer";
 
 function CountNumber({ count }) {
   return <h1>{count}</h1>;
+}
+
+function ComputedCount({ computedCount }) {
+  return <h1>{computedCount}</h1>;
 }
 
 function Operator({ increment, set, decrement }) {
@@ -20,8 +27,10 @@ function Count() {
     <div className="Count">
       <CountNumberContainer />
       <OperatorContainer ownProps={`ownProps`} />
+
+      <ComputedCountContainer />
     </div>
   );
 }
 
-export { Count, CountNumber, Operator };
+export { Count, CountNumber, Operator, ComputedCount };
