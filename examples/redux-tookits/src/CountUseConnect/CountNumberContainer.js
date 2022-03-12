@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
 import { CountNumber, ComputedCount } from "./Count";
+import { selectX } from "./selecters";
 
 const mapStateToProps = state => {
   return {
     count: state.count,
-    computedCount: state.count * 2
+    computedCount: selectX(state)
   };
 };
 
