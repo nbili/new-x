@@ -45,4 +45,4 @@ const SourceLink = styled.a`
   }
 `;
 
-export { Quote };
+export default Quote;

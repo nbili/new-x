@@ -1,20 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styled from "styled-components";
+// import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 
-import { Quote } from "./Quote";
+// import Quote from "./components/Quote";
+import Breadcrumbs from "./components/Breadcrumbs";
 
-const Title = styled.h1`
-  font-size: 1.4em;
-  text-align: center;
-  color: blue;
-`;
+// const Title = styled.h1`
+//   font-size: 1.4em;
+//   text-align: center;
+//   color: blue;
+// `;
 
-const Description = styled.p`
-  font-size: 1em;
-  color: gray;
-`;
+// const Description = styled.p`
+//   font-size: 1em;
+//   color: gray;
+// `;
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
       {/* <Title>css in js</Title>
       <Description>this is a Description</Description> */}
 
-      <Quote by="子曰" source="https://ctext.org/analects/xue-er/zhs">
+      {/* <Quote by="子曰" source="https://ctext.org/analects/xue-er/zhs">
         学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？
-      </Quote>
+      </Quote> */}
+
+      <Breadcrumbs />
 
       <GlobalStyles />
     </div>
