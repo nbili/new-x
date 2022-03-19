@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import GlobalStyles from "./GlobalStyles";
 
 // import Quote from "./components/Quote";
-import Breadcrumbs from "./components/Breadcrumbs";
+import Breadcrumbs, { Crumb } from "./components/Breadcrumbs";
 
 // const Title = styled.h1`
 //   font-size: 1.4em;
@@ -27,7 +27,12 @@ function App() {
         学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？
       </Quote> */}
 
-      <Breadcrumbs />
+      <Breadcrumbs>
+        <Crumb>Home</Crumb>
+        <Crumb>Course</Crumb>
+        <Crumb>Cache</Crumb>
+        <Crumb>Session</Crumb>
+      </Breadcrumbs>
 
       <GlobalStyles />
     </div>
