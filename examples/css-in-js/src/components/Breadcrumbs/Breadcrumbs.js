@@ -50,6 +50,16 @@ const BreadcrumbsBlue = styled(BreadcrumbList)`
   color: blue;
 `;
 
-export { Crumb, BreadcrumbsBlue };
+const TextItalicLink = styled.a`
+  color: greenyellow;
+  font-style: italic;
+
+  ${BreadcrumbsBlue} & {
+    color: blue;
+    font-style: revert;
+  }
+`;
+
+export { Crumb, BreadcrumbsBlue, TextItalicLink };
 
 export default Breadcrumbs;

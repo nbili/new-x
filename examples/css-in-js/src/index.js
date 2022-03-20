@@ -3,7 +3,11 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 
-import { Crumb, BreadcrumbsBlue } from "./components/Breadcrumbs";
+import {
+  Crumb,
+  BreadcrumbsBlue,
+  TextItalicLink
+} from "./components/Breadcrumbs";
 
 import Quote, { TextLink } from "./components/Quote";
 
@@ -29,10 +33,14 @@ function App() {
         <Crumb href={`/home`}>Home</Crumb>
         <Crumb href={`/course`}>Course</Crumb>
         <Crumb href={`/cache`}>Cache</Crumb>
-        <Crumb href={`/session`}>Session</Crumb>
+        <Crumb href={`/session`}>
+          <TextItalicLink>Session</TextItalicLink>
+        </Crumb>
       </BreadcrumbsBlue>
 
       <HrWrapper />
+
+      <TextItalicLink>Hello</TextItalicLink>
 
       <GlobalStyles />
     </div>
