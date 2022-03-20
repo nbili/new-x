@@ -1,38 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import styled from "styled-components";
+import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 
-// import Quote from "./components/Quote";
-import Breadcrumbs, { Crumb } from "./components/Breadcrumbs";
+import { Crumb, BreadcrumbsBlue } from "./components/Breadcrumbs";
 
-// const Title = styled.h1`
-//   font-size: 1.4em;
-//   text-align: center;
-//   color: blue;
-// `;
+import Quote, { TextLink } from "./components/Quote";
 
-// const Description = styled.p`
-//   font-size: 1em;
-//   color: gray;
-// `;
+const HrWrapper = styled.hr`
+  margin: 30px 0;
+`;
 
 function App() {
   return (
     <div>
-      {/* <Title>css in js</Title>
-      <Description>this is a Description</Description> */}
+      <Quote by="子曰" source="https://ctext.org/analects/xue-er/zhs">
+        学而时习之，不亦说乎？有朋自远方来，不亦乐乎？
+        <TextLink>人不知而不愠，不亦君子乎？</TextLink>
+      </Quote>
 
-      {/* <Quote by="子曰" source="https://ctext.org/analects/xue-er/zhs">
-        学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？
-      </Quote> */}
+      <HrWrapper />
 
-      <Breadcrumbs>
+      <TextLink>人不知而不愠，不亦君子乎？</TextLink>
+
+      <HrWrapper />
+
+      <BreadcrumbsBlue>
         <Crumb href={`/home`}>Home</Crumb>
         <Crumb href={`/course`}>Course</Crumb>
         <Crumb href={`/cache`}>Cache</Crumb>
         <Crumb href={`/session`}>Session</Crumb>
-      </Breadcrumbs>
+      </BreadcrumbsBlue>
+
+      <HrWrapper />
 
       <GlobalStyles />
     </div>

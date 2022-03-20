@@ -30,6 +30,16 @@ const QuoteContent = styled.blockquote`
   }
 `;
 
+const TextLink = styled.a`
+  color: red;
+  text-decoration: none;
+
+  ${QuoteContent} & {
+    color: black;
+    text-decoration: revert;
+  }
+`;
+
 const Author = styled.cite`
   display: block;
   text-align: right;
@@ -44,5 +54,7 @@ const SourceLink = styled.a`
     content: "—";
   }
 `;
+
+export { TextLink };
 
 export default Quote;

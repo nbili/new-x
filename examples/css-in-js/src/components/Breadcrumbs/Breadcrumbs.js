@@ -46,6 +46,10 @@ const CrumbLink = styled.a`
   }
 `;
 
-export { Crumb };
+const BreadcrumbsBlue = styled(BreadcrumbList)`
+  color: blue;
+`;
+
+export { Crumb, BreadcrumbsBlue };
 
 export default Breadcrumbs;
