@@ -28,10 +28,10 @@ function App() {
       </Quote> */}
 
       <Breadcrumbs>
-        <Crumb>Home</Crumb>
-        <Crumb>Course</Crumb>
-        <Crumb>Cache</Crumb>
-        <Crumb>Session</Crumb>
+        <Crumb href={`/home`}>Home</Crumb>
+        <Crumb href={`/course`}>Course</Crumb>
+        <Crumb href={`/cache`}>Cache</Crumb>
+        <Crumb href={`/session`}>Session</Crumb>
       </Breadcrumbs>
 
       <GlobalStyles />
