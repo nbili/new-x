@@ -34,9 +34,6 @@ function App() {
         <Crumb href={`/home`}>Home</Crumb>
         <Crumb href={`/course`}>Course</Crumb>
         <Crumb href={`/cache`}>Cache</Crumb>
-        <Crumb href={`/session`}>
-          <TextItalicLink>Session</TextItalicLink>
-        </Crumb>
       </BreadcrumbsBlue>
 
       <HrWrapper />
