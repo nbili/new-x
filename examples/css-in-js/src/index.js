@@ -10,6 +10,7 @@ import {
 } from "./components/Breadcrumbs";
 
 import Quote, { TextLink } from "./components/Quote";
+import ProgressBar from "./components/ProgressBar";
 
 const HrWrapper = styled.hr`
   margin: 30px 0;
@@ -41,6 +42,10 @@ function App() {
       <HrWrapper />
 
       <TextItalicLink>Hello</TextItalicLink>
+
+      <HrWrapper />
+
+      <ProgressBar></ProgressBar>
 
       <GlobalStyles />
     </div>
