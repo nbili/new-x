@@ -42,7 +42,7 @@ function App() {
 
       <HrWrapper />
 
-      <ProgressBar></ProgressBar>
+      <ProgressBar value={85}></ProgressBar>
 
       <GlobalStyles />
     </div>
