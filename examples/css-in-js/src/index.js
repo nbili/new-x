@@ -11,6 +11,7 @@ import {
 
 import Quote, { TextLink } from "./components/Quote";
 import ProgressBar from "./components/ProgressBar";
+import Select from "./components/Select";
 
 const HrWrapper = styled.hr`
   margin: 30px 0;
@@ -43,6 +44,13 @@ function App() {
       <HrWrapper />
 
       <ProgressBar value={85}></ProgressBar>
+
+      <HrWrapper />
+
+      <Select>
+        <option>hello</option>
+        <option>world</option>
+      </Select>
 
       <GlobalStyles />
     </div>
