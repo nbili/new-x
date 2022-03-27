@@ -12,6 +12,7 @@ import {
 import Quote, { TextLink } from "./components/Quote";
 import ProgressBar from "./components/ProgressBar";
 import Select from "./components/Select";
+import IconInput from "./components/IconInput";
 
 const HrWrapper = styled.hr`
   margin: 30px 0;
@@ -51,6 +52,10 @@ function App() {
         <option>hello</option>
         <option>world</option>
       </Select>
+
+      <HrWrapper />
+
+      <IconInput />
 
       <GlobalStyles />
     </div>
