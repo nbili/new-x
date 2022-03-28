@@ -1,9 +1,9 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-console.log('init ...')
+console.log("init ...");
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
