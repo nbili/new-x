@@ -5,3 +5,9 @@ export default function Enter() {
     </main>
   );
 }
+
+function SignInButton() {}
+
+function SignOutButton() {}
+
+function UserNameButton() {}
