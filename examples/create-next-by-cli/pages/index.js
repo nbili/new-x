@@ -1,15 +1,42 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
-  Math.random() |> x => x * 10 |> console.log;
+function sleep(time = 2000) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time);
+  });
+}
+
+export async function getServerSideProps() {
+  await sleep();
+
+  return {
+    props: {
+      users: [
+        { id: 1, name: "hello" },
+        { id: 2, name: "world" }
+      ]
+    }
+  };
+}
+
+export default function Home({ users }) {
+  console.log(users);
+  // Math.random() |> x => x * 10 |> console.log;
 
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <ul>
+        {users.map(user => {
+          return <li key={user.id}>{user.name}</li>;
+        })}
+      </ul>
 
       <main className={styles.main}>
         <h1 className={styles.title}>

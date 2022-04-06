@@ -1,5 +1,8 @@
 module.exports = {
   experimental: {
-    outputStandalone: true,
+    outputStandalone: true
   },
-}
+  webpack: (config, options) => {
+    return config;
+  }
+};
