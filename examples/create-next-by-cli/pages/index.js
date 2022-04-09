@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import lib from "../libs/three-party";
 
 function sleep(time = 2000) {
   return new Promise(resolve => {
@@ -21,6 +23,13 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ users }) {
+  useEffect(() => {
+
+    console.log(process)
+
+    lib();
+  }, []);
+
   console.log(users);
   // Math.random() |> x => x * 10 |> console.log;
 
