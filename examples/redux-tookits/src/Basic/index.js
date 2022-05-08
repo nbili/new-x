@@ -29,7 +29,17 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-const store = createStore(reducer);
+const monitorEnhancer = createStore => (reducer, initialState, enhancer) => {
+  const monitoredReducer = (state, action) => {
+    const newState = reducer(state, action);
+    console.log("newState: ", newState);
+    return newState;
+  };
+
+  return createStore(monitoredReducer, initialState, enhancer);
+};
+
+const store = createStore(reducer, monitorEnhancer);
 
 const subscriber = () => console.log(`sub: `, store.getState());
 
