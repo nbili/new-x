@@ -1,11 +1,14 @@
 import "./App.css";
 // import { Count } from "./Count";
-// import { Count } from "./CountUseConnect";
+import { Count } from "./CountUseConnect";
+import { UserContainer } from "./CountUseConnect/UserContainer";
 
 function App() {
   return (
     <div className="App" style={{ color: "red" }}>
-      {/* <Count /> */}
+      <UserContainer />
+      <hr />
+      <Count />
     </div>
   );
 }
