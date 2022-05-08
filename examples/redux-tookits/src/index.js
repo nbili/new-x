@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 
 import { store } from "./CountUseConnect/store";
 
+import "./Basic";
+
 // import './flatState'
 // import './enhancer'
 
