@@ -1,0 +1,12 @@
+{
+  "name": "inject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js"
+  },
+  "keywords": [],
+  "author": "nbili",
+  "license": "ISC"
+}
